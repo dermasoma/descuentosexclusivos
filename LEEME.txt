@@ -1,0 +1,14 @@
+MEJORA DE ETIQUETAS ANTES / DESPUÉS
+
+Se mejoró el comportamiento de los textos:
+
+- Si el comparador se mueve hacia ANTES, se resalta "Antes" y se oculta "Después".
+- Si el comparador se mueve hacia DESPUÉS, se resalta "Después" y se oculta "Antes".
+- En la zona intermedia pueden verse ambas, pero se destaca la dominante.
+
+Reemplaza únicamente:
+- index.html
+- css/precios.css
+- js/resultados-slider-fix.js
+
+No reemplaces js/precios.js.

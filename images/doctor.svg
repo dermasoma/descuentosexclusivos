@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="820" viewBox="0 0 720 820" role="img" aria-labelledby="title desc">
+  <title id="title">Fotografía temporal del Dr. Juan Quintero</title>
+  <desc id="desc">Ilustración de marcador de posición para reemplazar por la fotografía del doctor.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6efd9"/>
+      <stop offset="1" stop-color="#d7c07c"/>
+    </linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9e9e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="820" rx="54" fill="url(#bg)"/>
+  <circle cx="360" cy="255" r="138" fill="#d9ab8e"/>
+  <path d="M225 248c8-136 83-196 149-190 101 9 144 93 122 213-41-42-79-59-124-51-54 9-95 2-147 28Z" fill="#3a3a3a"/>
+  <path d="M287 302c20 23 44 35 75 35 29 0 57-13 78-39-4 76-31 114-79 114-47 0-70-35-74-110Z" fill="#d49f83"/>
+  <path d="M92 820c12-228 89-357 268-357 181 0 258 128 268 357Z" fill="url(#coat)"/>
+  <path d="M263 463l97 125 98-125 54 34-57 323H267l-59-323Z" fill="#ffffff"/>
+  <path d="M360 588l-53-67 53-32 53 32Z" fill="#3a3a3a"/>
+  <path d="M322 563h76l-20 257h-36Z" fill="#b89a4e"/>
+  <circle cx="311" cy="257" r="8" fill="#3a3a3a"/>
+  <circle cx="409" cy="257" r="8" fill="#3a3a3a"/>
+  <path d="M332 310c20 15 40 15 58 0" fill="none" stroke="#8d5e50" stroke-width="7" stroke-linecap="round"/>
+  <path d="M214 515c-39 78-57 180-56 305" fill="none" stroke="#d4d4d4" stroke-width="8"/>
+  <path d="M506 515c39 78 57 180 56 305" fill="none" stroke="#d4d4d4" stroke-width="8"/>
+  <text x="360" y="760" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#3a3a3a">REEMPLAZAR POR FOTO DEL DOCTOR</text>
+</svg>

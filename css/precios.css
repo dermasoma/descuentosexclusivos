@@ -1,0 +1,1605 @@
+
+/* =========================================================
+   PÁGINA DE TRATAMIENTOS Y PRECIOS
+   Mantiene la identidad visual del Dr. Juan Quintero.
+========================================================= */
+
+.prices-page {
+  background: #f8f6f0;
+}
+
+.prices-page .site-header {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.prices-page .nav-link.is-active {
+  color: var(--gold-dark);
+}
+
+.prices-page .nav-link.is-active::after {
+  width: 100%;
+}
+
+/* HERO */
+.prices-hero {
+  position: relative;
+  padding-top: calc(var(--header-height) + 52px);
+  padding-bottom: 44px;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(224, 198, 124, 0.22), transparent 28%),
+    linear-gradient(120deg, #3a3a3a 0%, #232323 58%, #151515 100%);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.prices-hero::after {
+  content: "";
+  position: absolute;
+  right: -4%;
+  bottom: -54px;
+  left: -4%;
+  height: 90px;
+  background: #f8f6f0;
+  transform: rotate(-1.2deg);
+  transform-origin: center;
+}
+
+.prices-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(224, 198, 124, 0.18);
+  pointer-events: none;
+}
+
+.prices-hero-glow-one {
+  top: 80px;
+  left: 6%;
+  width: 180px;
+  height: 180px;
+}
+
+.prices-hero-glow-two {
+  right: 13%;
+  bottom: 60px;
+  width: 260px;
+  height: 260px;
+}
+
+.prices-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  align-items: center;
+  gap: 54px;
+}
+
+.prices-hero-copy {
+  padding: 44px 0 58px;
+}
+
+.prices-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 22px;
+  padding: 9px 16px;
+  border: 1px solid rgba(224, 198, 124, 0.48);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.prices-hero h1 {
+  max-width: 680px;
+  font-size: clamp(3.6rem, 7vw, 6.8rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+.prices-hero h1 span {
+  display: block;
+  color: var(--gold);
+}
+
+.prices-hero-copy > p {
+  max-width: 650px;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 1.08rem;
+}
+
+.prices-hero-cta {
+  margin-top: 28px;
+  background: var(--gold);
+  color: #222;
+}
+
+.prices-hero-doctor {
+  position: relative;
+  align-self: end;
+}
+
+.prices-hero-photo {
+  position: relative;
+  width: min(410px, 100%);
+  height: 470px;
+  margin-left: auto;
+  border-radius: 42px 42px 0 0;
+  overflow: hidden;
+}
+
+.prices-hero-photo::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 58%, rgba(20, 20, 20, 0.44) 100%);
+  pointer-events: none;
+}
+
+.prices-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.price-filters-wrap {
+  position: relative;
+  z-index: 4;
+  margin-top: 14px;
+  padding-bottom: 12px;
+}
+
+.filter-label {
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.price-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.price-filter {
+  min-height: 38px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 600;
+  transition:
+    transform var(--transition),
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.price-filter:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+}
+
+.price-filter.is-active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #222;
+}
+
+/* CATÁLOGO */
+.price-catalog {
+  position: relative;
+  z-index: 3;
+  padding-top: 100px;
+}
+
+.price-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 940px;
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(58, 58, 58, 0.16);
+}
+
+.price-section-icon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 17px;
+  color: #222;
+  background: var(--gold);
+  box-shadow: 0 12px 28px rgba(184, 154, 78, 0.22);
+}
+
+.price-section-heading .eyebrow {
+  margin-bottom: 7px;
+}
+
+.price-section-heading h2 {
+  color: var(--charcoal);
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.price-card {
+  position: relative;
+  min-width: 0;
+  border: 1px solid rgba(58, 58, 58, 0.11);
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 0 12px 36px rgba(30, 27, 20, 0.08);
+  overflow: hidden;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.price-card:hover {
+  border-color: rgba(184, 154, 78, 0.38);
+  box-shadow: 0 22px 50px rgba(30, 27, 20, 0.14);
+  transform: translateY(-6px);
+}
+
+.price-card[hidden] {
+  display: none !important;
+}
+
+.price-card-image {
+  position: relative;
+  height: 245px;
+  background: var(--gold-soft);
+  overflow: hidden;
+}
+
+.price-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.price-card:hover .price-card-image img {
+  transform: scale(1.035);
+}
+
+.price-badge {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 16px;
+  max-width: calc(100% - 32px);
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #252525;
+  background: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.discount-badge {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  color: #232323;
+  background:  #e0c67c;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 0.95;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.price-card-body {
+  padding: 22px;
+}
+
+.price-card h3 {
+  color: var(--charcoal);
+  font-size: 1.62rem;
+  line-height: 1.05;
+}
+
+.price-card-description {
+  min-height: 72px;
+  margin-top: 11px;
+  color: var(--charcoal-light);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.price-divider {
+  height: 1px;
+  margin: 18px 0;
+  background: rgba(58, 58, 58, 0.11);
+}
+
+.price-old {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-height: 27px;
+  color: #858585;
+  font-size: 0.82rem;
+}
+
+.price-old strong {
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+.price-current-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 2px;
+}
+
+.price-current-label {
+  display: block;
+  margin-bottom: -3px;
+  color: var(--gold-dark);
+  font-size: 0.77rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.price-current {
+  color: #2d2d2d;
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+
+.price-card-action {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 19px;
+  border: 0;
+  border-radius: 999px;
+  color: #222;
+  background: linear-gradient(90deg, #e0c67c, #efd994);
+  box-shadow: 0 10px 24px rgba(184, 154, 78, 0.18);
+}
+
+.price-card-action:hover {
+  color: #fff;
+  background: var(--charcoal);
+}
+
+.price-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 900px;
+  margin: 44px auto 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(184, 154, 78, 0.24);
+  border-radius: 18px;
+  color: var(--charcoal-light);
+  background: rgba(246, 239, 217, 0.55);
+  font-size: 0.9rem;
+}
+
+.price-note i {
+  margin-top: 4px;
+  color: var(--gold-dark);
+}
+
+/* CTA */
+.price-cta-section {
+  padding: 10px 0 110px;
+}
+
+.price-cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 34px;
+  padding: 42px;
+  border-radius: 32px;
+  color: var(--charcoal);
+  background: var(--white);
+  box-shadow: 0 18px 50px rgba(30, 27, 20, 0.09);
+}
+
+.price-cta-box h2 {
+  margin-top: 4px;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1;
+}
+
+.price-cta-box p {
+  max-width: 720px;
+  margin-top: 14px;
+  color: var(--charcoal-light);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1020px) {
+  .prices-hero-inner {
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 28px;
+  }
+
+  .prices-hero-photo {
+    height: 420px;
+  }
+
+  .price-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .prices-hero {
+    padding-top: calc(var(--header-height) + 26px);
+  }
+
+  .prices-hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .prices-hero-copy {
+    padding-bottom: 18px;
+    text-align: center;
+  }
+
+  .prices-kicker {
+    justify-content: center;
+  }
+
+  .prices-hero h1 {
+    margin-inline: auto;
+  }
+
+  .prices-hero-copy > p {
+    margin-inline: auto;
+  }
+
+  .prices-hero-doctor {
+    display: none;
+  }
+
+  .price-filters-wrap {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .price-filters {
+    justify-content: center;
+  }
+
+  .price-cta-box {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .prices-hero {
+    padding-bottom: 64px;
+  }
+
+  .prices-hero::after {
+    height: 55px;
+  }
+
+  .prices-hero-copy {
+    padding-top: 28px;
+  }
+
+  .prices-kicker {
+    padding: 8px 12px;
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+
+  .prices-hero h1 {
+    font-size: clamp(3.2rem, 17vw, 4.8rem);
+  }
+
+  .prices-hero-copy > p {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .prices-hero-cta {
+    width: 100%;
+  }
+
+  .price-filters-wrap {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .price-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .price-filter {
+    padding-inline: 10px;
+    font-size: 0.78rem;
+  }
+
+  .price-catalog {
+    padding-top: 78px;
+  }
+
+  .price-section-heading {
+    align-items: flex-start;
+  }
+
+  .price-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .price-card-image {
+    height: 230px;
+  }
+
+  .price-card-description {
+    min-height: 0;
+  }
+
+  .price-current {
+    font-size: 2.45rem;
+  }
+
+  .price-cta-section {
+    padding-bottom: 80px;
+  }
+
+  .price-cta-box {
+    padding: 28px 22px;
+  }
+
+  .price-cta-box .button {
+    width: 100%;
+  }
+}
+
+
+/* Tarjetas sin precios */
+.price-card-body {
+  display: flex;
+  min-height: 270px;
+  flex-direction: column;
+}
+
+.price-card-action {
+  margin-top: auto;
+}
+
+.price-divider,
+.price-old,
+.price-current-row,
+.price-note {
+  display: none !important;
+}
+
+/* =========================================================
+   BANNER CORREGIDO
+   La imagen horizontal funciona como fondo completo del hero.
+========================================================= */
+.prices-hero.prices-hero-banner {
+  position: relative;
+  min-height: 690px;
+  padding-top: calc(var(--header-height) + 48px);
+  padding-bottom: 54px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 23, 23, 0.84) 0%,
+      rgba(23, 23, 23, 0.70) 31%,
+      rgba(23, 23, 23, 0.28) 57%,
+      rgba(23, 23, 23, 0.04) 78%
+    ),
+    url("../images/banner-tratamientos.png") 58% center / cover no-repeat;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.prices-hero.prices-hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.13)),
+    radial-gradient(circle at 14% 18%, rgba(224, 198, 124, 0.15), transparent 27%);
+  pointer-events: none;
+}
+
+.prices-hero.prices-hero-banner::after {
+  z-index: 1;
+}
+
+.prices-hero.prices-hero-banner .prices-hero-glow {
+  display: none;
+}
+
+.prices-hero.prices-hero-banner .prices-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: block;
+  min-height: 470px;
+}
+
+.prices-hero.prices-hero-banner .prices-hero-copy {
+  width: min(590px, 54%);
+  padding: 54px 0 34px;
+  text-align: left;
+}
+
+.prices-hero.prices-hero-banner .prices-kicker {
+  border-color: rgba(224, 198, 124, 0.65);
+  background: rgba(24, 24, 24, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.prices-hero.prices-hero-banner h1 {
+  max-width: 560px;
+  margin: 0;
+  font-size: 4.4rem;;
+  line-height: 0.88;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+}
+
+.prices-hero.prices-hero-banner .prices-hero-copy > p {
+  max-width: 540px;
+  margin-top: 26px;
+  color: rgba(255, 255, 255, 0.90);
+  font-size: 1.06rem;
+  line-height: 1.65;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.22);
+}
+
+.prices-hero.prices-hero-banner .prices-hero-cta {
+  margin-top: 26px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.17);
+}
+
+.prices-hero.prices-hero-banner .prices-hero-doctor,
+.prices-hero.prices-hero-banner .prices-hero-photo {
+  display: none !important;
+}
+
+.prices-hero.prices-hero-banner .price-filters-wrap {
+  position: relative;
+  z-index: 3;
+  margin-top: -10px;
+  padding-bottom: 16px;
+  text-align: left;
+}
+
+.prices-hero.prices-hero-banner .filter-label {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.prices-hero.prices-hero-banner .price-filters {
+  justify-content: flex-start;
+}
+
+.prices-hero.prices-hero-banner .price-filter {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(25, 25, 25, 0.22);
+  backdrop-filter: blur(7px);
+}
+
+.prices-hero.prices-hero-banner .price-filter:hover {
+  border-color: var(--gold);
+  background: rgba(25, 25, 25, 0.38);
+}
+
+.prices-hero.prices-hero-banner .price-filter.is-active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #222222;
+}
+
+/* CATÁLOGO: mantener todas las tarjetas ordenadas debajo del hero */
+.prices-hero.prices-hero-banner + .price-catalog {
+  padding-top: 92px;
+}
+
+@media (max-width: 1100px) {
+  .prices-hero.prices-hero-banner {
+    min-height: 650px;
+    background-position: 66% center;
+  }
+
+  .prices-hero.prices-hero-banner .prices-hero-copy {
+    width: min(570px, 60%);
+  }
+}
+
+@media (max-width: 860px) {
+  .prices-hero.prices-hero-banner {
+    min-height: 720px;
+    padding-top: calc(var(--header-height) + 28px);
+    padding-bottom: 58px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0.72) 0%,
+        rgba(20, 20, 20, 0.60) 42%,
+        rgba(20, 20, 20, 0.42) 100%
+      ),
+      url("../images/banner-tratamientos.png") 69% center / cover no-repeat;
+  }
+
+  .prices-hero.prices-hero-banner .prices-hero-inner {
+    min-height: auto;
+  }
+
+  .prices-hero.prices-hero-banner .prices-hero-copy {
+    width: 100%;
+    max-width: 560px;
+    padding: 34px 0 22px;
+    text-align: left;
+  }
+
+  .prices-hero.prices-hero-banner .prices-kicker {
+    justify-content: flex-start;
+  }
+
+  .prices-hero.prices-hero-banner h1 {
+    margin: 0;
+  }
+
+  .prices-hero.prices-hero-banner .prices-hero-copy > p {
+    margin-inline: 0;
+  }
+
+  .prices-hero.prices-hero-banner .price-filters-wrap {
+    margin-top: 22px;
+    text-align: left;
+  }
+
+  .prices-hero.prices-hero-banner .price-filters {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .prices-hero.prices-hero-banner {
+    min-height: 680px;
+    padding-bottom: 62px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0.70) 0%,
+        rgba(20, 20, 20, 0.60) 52%,
+        rgba(20, 20, 20, 0.46) 100%
+      ),
+      url("../images/banner-tratamientos.png") 72% center / cover no-repeat;
+  }
+
+  .prices-hero.prices-hero-banner::after {
+    height: 48px;
+  }
+
+  .prices-hero.prices-hero-banner .prices-hero-copy {
+    padding-top: 22px;
+  }
+
+  .prices-hero.prices-hero-banner h1 {
+    max-width: 330px;
+    font-size: clamp(3rem, 16vw, 4.5rem);
+  }
+
+  .prices-hero.prices-hero-banner .prices-hero-copy > p {
+    max-width: 350px;
+    font-size: 0.98rem;
+  }
+
+  .prices-hero.prices-hero-banner .prices-hero-cta {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  .prices-hero.prices-hero-banner .price-filters-wrap {
+    width: min(100% - 28px, 1180px);
+    margin-top: 18px;
+  }
+
+  .prices-hero.prices-hero-banner .price-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+
+/* =========================================================
+   NUESTROS MEJORES RESULTADOS
+========================================================= */
+.results-section {
+  padding: 0 0 90px;
+}
+
+.results-heading {
+  max-width: 900px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.results-heading h2 {
+  margin-top: 6px;
+  color: var(--charcoal);
+  font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+  line-height: 0.95;
+}
+
+.results-heading p {
+  max-width: 760px;
+  margin: 14px auto 0;
+  color: var(--charcoal-light);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.result-card {
+  min-width: 0;
+}
+
+.result-compare {
+  position: relative;
+  height: 340px;
+  border-radius: 18px;
+  background: #e9e9e9;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(28, 28, 28, 0.08);
+}
+
+.result-layer,
+.result-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.result-layer img,
+.result-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.result-overlay {
+  width: 50%;
+  border-right: 2px solid rgba(224, 198, 124, 0.95);
+  overflow: hidden;
+}
+
+.result-overlay::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -13px;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  transform: translateY(-50%);
+}
+
+.result-chip {
+  position: absolute;
+  bottom: 14px;
+  z-index: 3;
+  min-width: 62px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #6a6a6a;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 0.72rem;
+  line-height: 1;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.result-chip-before {
+  left: 14px;
+}
+
+.result-chip-after {
+  right: 14px;
+}
+
+.result-slider {
+  position: absolute;
+  inset: auto 10px 10px 10px;
+  z-index: 4;
+  width: calc(100% - 20px);
+  margin: 0;
+  background: transparent;
+  appearance: none;
+}
+
+.result-slider::-webkit-slider-runnable-track {
+  height: 2px;
+  background: transparent;
+}
+
+.result-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: ew-resize;
+  margin-top: -11px;
+}
+
+.result-slider::-moz-range-track {
+  height: 2px;
+  background: transparent;
+}
+
+.result-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.result-caption {
+  margin-top: 6px;
+  padding: 12px 10px 10px;
+  border-radius: 0 0 18px 18px;
+  color: #161616;
+  background: var(--gold);
+  text-align: center;
+}
+
+.result-caption strong,
+.result-caption span {
+  display: block;
+  line-height: 1.1;
+}
+
+.result-caption strong {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.result-caption span {
+  margin-top: 2px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.result-placeholder {
+  display: grid;
+  place-items: center;
+  color: #8b8b8b;
+  background:
+    linear-gradient(90deg, rgba(224, 198, 124, 0.12), rgba(224, 198, 124, 0.0)),
+    #e5e5e5;
+}
+
+.result-placeholder em {
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #7d7d7d;
+  background: rgba(255, 255, 255, 0.82);
+  font-size: 0.82rem;
+  font-style: normal;
+}
+
+.results-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 760px;
+  margin: 26px auto 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(184, 154, 78, 0.2);
+  border-radius: 16px;
+  color: var(--charcoal-light);
+  background: rgba(246, 239, 217, 0.52);
+  font-size: 0.9rem;
+}
+
+.results-note i {
+  margin-top: 4px;
+  color: var(--gold-dark);
+}
+
+@media (max-width: 1020px) {
+  .results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .results-section {
+    padding-bottom: 74px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .result-compare {
+    height: 300px;
+  }
+
+  .result-caption strong {
+    font-size: 0.92rem;
+  }
+
+  .result-caption span {
+    font-size: 0.72rem;
+  }
+}
+
+
+
+/* =========================================================
+   COMPARADOR ANTES / DESPUÉS - ARRASTRE CON MOUSE Y DEDO
+========================================================= */
+.result-compare {
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: none;
+}
+
+.result-overlay {
+  border-right: 0;
+  pointer-events: none;
+}
+
+.result-divider-line {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--gold);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.35);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.result-handle {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  gap: 3px;
+  width: 46px;
+  height: 46px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  color: #222222;
+  background: var(--gold);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.24);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.result-handle i {
+  font-size: 0.78rem;
+}
+
+.result-compare.is-dragging .result-handle {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.30);
+}
+
+.result-compare.is-dragging .result-divider-line {
+  width: 3px;
+}
+
+.result-slider {
+  position: absolute;
+  z-index: 7;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  appearance: none;
+  -webkit-appearance: none;
+  touch-action: none;
+}
+
+.result-slider:focus-visible + .result-divider-line,
+.result-slider:focus-visible ~ .result-divider-line {
+  outline: none;
+}
+
+.result-compare:focus-within .result-handle {
+  box-shadow:
+    0 0 0 4px rgba(224, 198, 124, 0.28),
+    0 10px 26px rgba(0,0,0,0.24);
+}
+
+.result-chip {
+  z-index: 8;
+  pointer-events: none;
+}
+
+@media (max-width: 620px) {
+  .result-handle {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Centrado del encabezado de resultados */
+.results-heading {
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.results-heading .eyebrow {
+  justify-content: center;
+}
+
+.results-heading p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* La nota interna de edición no debe mostrarse al público */
+.results-note {
+  display: none !important;
+}
+
+/* =========================================================
+   FIX DEFINITIVO DEL DESLIZADOR ANTES / DESPUÉS
+   - La imagen "Antes" queda como base completa.
+   - La imagen "Después" se muestra a la derecha del divisor.
+   - No deforma las imágenes al mover el comparador.
+========================================================= */
+.result-compare {
+  position: relative;
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: none;
+}
+
+.result-layer,
+.result-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.result-layer img,
+.result-overlay img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* El overlay ocupa SIEMPRE todo el ancho.
+   El recorte se hace con clip-path para no deformar la foto. */
+.result-overlay {
+  width: 100% !important;
+  inset: 0;
+  overflow: hidden;
+  border-right: 0 !important;
+  clip-path: inset(0 0 0 50%);
+  -webkit-clip-path: inset(0 0 0 50%);
+  pointer-events: none;
+}
+
+.result-overlay::after {
+  display: none !important;
+}
+
+/* Input viejo: se mantiene para accesibilidad, pero ya no captura el mouse. */
+.result-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Línea divisoria */
+.result-divider-line {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--gold);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.45);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Botón central */
+.result-handle {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+  gap: 4px;
+  width: 48px;
+  height: 48px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  color: #222222;
+  background: var(--gold);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.result-handle i {
+  font-size: 0.8rem;
+}
+
+.result-compare.is-dragging .result-handle {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
+}
+
+.result-compare:focus {
+  outline: none;
+}
+
+.result-compare:focus-visible .result-handle {
+  box-shadow:
+    0 0 0 5px rgba(224, 198, 124, 0.28),
+    0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.result-chip {
+  z-index: 11;
+  pointer-events: none;
+}
+
+@media (max-width: 620px) {
+  .result-handle {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+
+/* =========================================================
+   AJUSTE FINAL: MISMO TAMAÑO + LADOS FIJOS
+   - ANTES siempre queda a la izquierda.
+   - DESPUÉS siempre queda a la derecha.
+   - Ambas imágenes ocupan exactamente el mismo contenedor.
+   - Al mover la línea ninguna imagen cambia de escala.
+========================================================= */
+.result-compare {
+  --split: 50%;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Las dos imágenes usan SIEMPRE el mismo marco completo */
+.result-compare > .result-layer,
+.result-compare > .result-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.result-compare > .result-layer img,
+.result-compare > .result-overlay img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transform: none !important;
+}
+
+/* ANTES = imagen base completa */
+.result-compare > .result-layer {
+  z-index: 1;
+}
+
+/* DESPUÉS = imagen completa, solo recortada desde la línea hacia la derecha */
+.result-compare > .result-overlay {
+  z-index: 2;
+  width: 100% !important;
+  overflow: hidden;
+  clip-path: inset(0 0 0 var(--split)) !important;
+  -webkit-clip-path: inset(0 0 0 var(--split)) !important;
+}
+
+/* La línea y el control siguen exactamente la variable --split */
+.result-divider-line {
+  left: var(--split) !important;
+}
+
+.result-handle {
+  left: var(--split) !important;
+}
+
+/* Los rótulos nunca se mueven ni cambian de lado */
+.result-chip-before {
+  z-index: 20;
+  left: 14px !important;
+  right: auto !important;
+}
+
+.result-chip-after {
+  z-index: 20;
+  right: 14px !important;
+  left: auto !important;
+}
+
+/* El input invisible no modifica tamaños ni posiciones */
+.result-slider {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+
+/* =========================================================
+   FIX FINAL DEL COMPARADOR
+   ANTES = siempre lado izquierdo
+   DESPUÉS = siempre lado derecho
+   Las dos imágenes permanecen 100% del mismo tamaño.
+========================================================= */
+.result-compare {
+  --split: 50%;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  cursor: ew-resize;
+  touch-action: none;
+  user-select: none;
+}
+
+/* Ambas capas ocupan exactamente todo el contenedor */
+.result-compare > .result-layer,
+.result-compare > .result-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Las imágenes nunca cambian de tamaño al mover la línea */
+.result-compare > .result-layer > img,
+.result-compare > .result-overlay > img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: none !important;
+}
+
+/* ANTES: solo se ve desde la izquierda hasta la línea */
+.result-compare > .result-layer {
+  z-index: 1 !important;
+  clip-path: inset(0 calc(100% - var(--split)) 0 0) !important;
+  -webkit-clip-path: inset(0 calc(100% - var(--split)) 0 0) !important;
+}
+
+/* DESPUÉS: solo se ve desde la línea hasta la derecha */
+.result-compare > .result-overlay {
+  z-index: 2 !important;
+  clip-path: inset(0 0 0 var(--split)) !important;
+  -webkit-clip-path: inset(0 0 0 var(--split)) !important;
+}
+
+.result-overlay::after {
+  display: none !important;
+}
+
+/* Línea divisoria */
+.result-divider-line {
+  position: absolute !important;
+  z-index: 20 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: var(--split) !important;
+  width: 2px !important;
+  background: var(--gold) !important;
+  transform: translateX(-50%) !important;
+  pointer-events: none !important;
+}
+
+/* Control central */
+.result-handle {
+  position: absolute !important;
+  z-index: 21 !important;
+  top: 50% !important;
+  left: var(--split) !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+}
+
+/* Etiquetas fijas, nunca cambian de lado */
+.result-chip-before {
+  position: absolute !important;
+  z-index: 30 !important;
+  left: 14px !important;
+  right: auto !important;
+  bottom: 14px !important;
+}
+
+.result-chip-after {
+  position: absolute !important;
+  z-index: 30 !important;
+  right: 14px !important;
+  left: auto !important;
+  bottom: 14px !important;
+}
+
+/* El input queda solo como apoyo de accesibilidad */
+.result-slider {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 5 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+
+
+/* =========================================================
+   ETIQUETAS DINÁMICAS ANTES / DESPUÉS
+   - Si estás viendo ANTES, se resalta "Antes" y se oculta "Después".
+   - Si estás viendo DESPUÉS, se resalta "Después" y se oculta "Antes".
+   - En el centro pueden convivir suavemente, pero una se prioriza.
+========================================================= */
+.result-chip {
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.result-chip.is-hidden {
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+}
+
+.result-chip.is-active {
+  color: #222222;
+  background: var(--gold);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.result-chip.is-inactive {
+  opacity: 0.35;
+}
+
+.result-compare.compare-before .result-chip-before {
+  opacity: 1;
+  transform: none;
+}
+
+.result-compare.compare-before .result-chip-after {
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+}
+
+.result-compare.compare-after .result-chip-after {
+  opacity: 1;
+  transform: none;
+}
+
+.result-compare.compare-after .result-chip-before {
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+}
+
+/* Zona media: puede mostrar ambas, pero resaltando la dominante */
+.result-compare.compare-middle .result-chip-before,
+.result-compare.compare-middle .result-chip-after {
+  opacity: 1;
+  transform: none;
+}
+
+.result-compare.compare-middle[data-dominant="before"] .result-chip-before {
+  color: #222222;
+  background: var(--gold);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.result-compare.compare-middle[data-dominant="before"] .result-chip-after {
+  opacity: 0.55;
+}
+
+.result-compare.compare-middle[data-dominant="after"] .result-chip-after {
+  color: #222222;
+  background: var(--gold);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.result-compare.compare-middle[data-dominant="after"] .result-chip-before {
+  opacity: 0.55;
+}

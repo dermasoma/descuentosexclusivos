@@ -1,0 +1,11 @@
+Agrega aquí las imágenes de los tratamientos nuevos con estos nombres:
+tratamiento-09.png
+tratamiento-10.png
+tratamiento-11.png
+tratamiento-12.png
+tratamiento-13.png
+tratamiento-14.png
+tratamiento-15.png
+tratamiento-16.png
+
+También puedes cambiar cada ruta directamente en js/script.js.

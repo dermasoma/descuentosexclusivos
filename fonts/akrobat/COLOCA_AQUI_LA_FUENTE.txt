@@ -1,0 +1,8 @@
+Coloca aquí tus archivos licenciados de Akrobat Family.
+
+Rutas sugeridas:
+- Akrobat-Regular.woff2
+- Akrobat-SemiBold.woff2
+- Akrobat-Bold.woff2
+
+Después, descomenta las reglas @font-face ubicadas al inicio de css/styles.css.
